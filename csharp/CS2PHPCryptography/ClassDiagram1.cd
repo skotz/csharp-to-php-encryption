@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CS2PHPCryptography.HttpControl">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAACAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>HTTPControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CS2PHPCryptography.PostPackageBuilder">
+    <Position X="0.5" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAgAAAAAAAAAAAAAAAQIAAAAAA=</HashCode>
+      <FileName>HTTPControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CS2PHPCryptography.AsyncHttpControl">
+    <Position X="2.5" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="CS2PHPCryptography.AsyncHttpControl.ResponseCallback">
+        <TypeIdentifier>
+          <NewMemberFileName>AsyncHttpControl.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAAEAEAAAAAAACBAAEEAAADACAAAAAAAAAAAAAAAIIA=</HashCode>
+      <FileName>AsyncHttpControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CS2PHPCryptography.OnHttpResponseEventArgs">
+    <Position X="2.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AsyncHttpControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CS2PHPCryptography.Utility">
+    <Position X="4.75" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAABAAAA=</HashCode>
+      <FileName>Utility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CS2PHPCryptography.AEStoPHPCryptography">
+    <Position X="10" Y="3" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAEAIAAAARQAAAAAEAAAAAAAAACQAgAQAAAAAA=</HashCode>
+      <FileName>AESfromPHP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CS2PHPCryptography.RSAtoPHPCryptography">
+    <Position X="10" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AQAAAABAEBAAQAAAAAAAAAAAAAAAACAEAAAAAAAAAAA=</HashCode>
+      <FileName>RSAfromPHP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CS2PHPCryptography.SecurePHPConnection">
+    <Position X="7" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="CS2PHPCryptography.SecurePHPConnection.ConnectionEstablishedHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>SecurePHPConnection.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="CS2PHPCryptography.SecurePHPConnection.ResponseReceivedHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>SecurePHPConnection.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>KAgBEABQAIAACiAQAEAAUBAAIAIAAAAIADAAAAAAIEA=</HashCode>
+      <FileName>SecurePHPConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CS2PHPCryptography.OnConnectionEstablishedArgs">
+    <Position X="5" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SecurePHPConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CS2PHPCryptography.ResponseReceivedEventArgs">
+    <Position X="7.25" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SecurePHPConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="CS2PHPCryptography.ProxySettings">
+    <Position X="0.75" Y="5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAACAAIAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>HTTPControl.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>
