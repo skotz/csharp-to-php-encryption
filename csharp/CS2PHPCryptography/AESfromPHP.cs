@@ -2,12 +2,12 @@
 // Copyright (c) 2011 Scott Clayton
 //
 // This file is part of the C# to PHP Encryption Library.
-//   
+//
 // The C# to PHP Encryption Library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-//   
+//
 // The C# to PHP Encryption Library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -18,11 +18,8 @@
 //
 
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace CS2PHPCryptography
 {
@@ -77,9 +74,13 @@ namespace CS2PHPCryptography
             IV = Convert.FromBase64String(iv);
 
             if (Key.Length * 8 != 256)
+            {
                 throw new Exception("The Key must be exactally 256 bits long!");
+            }
             if (IV.Length * 8 != 128)
+            {
                 throw new Exception("The IV must be exactally 128 bits long!");
+            }
         }
 
         /// <summary>

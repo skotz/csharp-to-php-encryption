@@ -2,12 +2,12 @@
 // Copyright (c) 2011 Scott Clayton
 //
 // This file is part of the C# to PHP Encryption Library.
-//   
+//
 // The C# to PHP Encryption Library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-//   
+//
 // The C# to PHP Encryption Library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -17,12 +17,8 @@
 // along with the C# to PHP Encryption Library.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace CS2PHPCryptography
 {
@@ -42,12 +38,14 @@ namespace CS2PHPCryptography
         /// Event raised when a secure connection has been established with the remote PHP script.
         /// </summary>
         public event ConnectionEstablishedHandler OnConnectionEstablished;
+
         public delegate void ConnectionEstablishedHandler(object sender, OnConnectionEstablishedEventArgs e);
 
         /// <summary>
         /// Event raised when an encrypted transmission is received as a response to something you sent.
         /// </summary>
         public event ResponseReceivedHandler OnResponseReceived;
+
         public delegate void ResponseReceivedHandler(object sender, ResponseReceivedEventArgs e);
 
         /// <summary>
@@ -106,7 +104,7 @@ namespace CS2PHPCryptography
             inUse = false;
         }
 
-        void background_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void background_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (connected)
             {
@@ -121,7 +119,7 @@ namespace CS2PHPCryptography
             }
         }
 
-        void background_DoWork(object sender, DoWorkEventArgs e)
+        private void background_DoWork(object sender, DoWorkEventArgs e)
         {
             // Get the RSA public key that we will use
             string cert = http.Post(address, "getkey=y");
@@ -143,7 +141,9 @@ namespace CS2PHPCryptography
         public void EstablishSecureConnectionAsync()
         {
             if (!background.IsBusy)
+            {
                 background.RunWorkerAsync();
+            }
         }
 
         /// <summary>
@@ -185,9 +185,9 @@ namespace CS2PHPCryptography
             }
         }
 
-        void sender_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void sender_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            inUse = false; 
+            inUse = false;
 
             if (OnResponseReceived != null)
             {
@@ -195,7 +195,7 @@ namespace CS2PHPCryptography
             }
         }
 
-        void sender_DoWork(object sender, DoWorkEventArgs e)
+        private void sender_DoWork(object sender, DoWorkEventArgs e)
         {
             inUse = true;
             asyncResponse = SendMessageSecure((string)e.Argument);

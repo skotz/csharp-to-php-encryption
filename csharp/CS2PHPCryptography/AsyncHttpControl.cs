@@ -2,12 +2,12 @@
 // Copyright (c) 2011 Scott Clayton
 //
 // This file is part of the C# to PHP Encryption Library.
-//   
+//
 // The C# to PHP Encryption Library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-//   
+//
 // The C# to PHP Encryption Library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -18,10 +18,7 @@
 //
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 
 namespace CS2PHPCryptography
 {
@@ -47,6 +44,7 @@ namespace CS2PHPCryptography
         /// Raised when a response from the last HTTP request has arrived.
         /// </summary>
         public event ResponseCallback OnHttpResponse;
+
         public delegate void ResponseCallback(object sender, OnHttpResponseEventArgs e);
 
         public AsyncHttpControl()
@@ -151,7 +149,7 @@ namespace CS2PHPCryptography
             }
         }
 
-        void background_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void background_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             if (OnHttpResponse != null)
             {
@@ -160,7 +158,7 @@ namespace CS2PHPCryptography
             }
         }
 
-        void background_DoWork(object sender, DoWorkEventArgs e)
+        private void background_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {
@@ -171,6 +169,7 @@ namespace CS2PHPCryptography
                     case RequestOption.Get:
                         response = http.Get(request.url, request.settings);
                         break;
+
                     case RequestOption.Post:
                         response = http.Post(request.url, request.data, request.settings);
                         break;
@@ -184,7 +183,7 @@ namespace CS2PHPCryptography
         }
     }
 
-    enum RequestOption
+    internal enum RequestOption
     {
         Post,
         Get

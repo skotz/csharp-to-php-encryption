@@ -76,7 +76,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(390, 20);
             this.txtAddress.TabIndex = 1;
-            this.txtAddress.Text = "http://skot2/enc/test.php";
+            this.txtAddress.Text = "http://localhost/test.php";
             // 
             // txtMessage
             // 
@@ -160,7 +160,7 @@
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(390, 20);
             this.txtAddress2.TabIndex = 1;
-            this.txtAddress2.Text = "http://skot2/enc/rsa.php";
+            this.txtAddress2.Text = "http://localhost/rsa.php";
             // 
             // label4
             // 
@@ -246,7 +246,7 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Full Test - Get certificate, send AES key, send secure message, get secure respon" +
-                "se";
+    "se";
             // 
             // txtAddress3
             // 
@@ -254,7 +254,7 @@
             this.txtAddress3.Name = "txtAddress3";
             this.txtAddress3.Size = new System.Drawing.Size(390, 20);
             this.txtAddress3.TabIndex = 1;
-            this.txtAddress3.Text = "http://skot2/enc/example.php";
+            this.txtAddress3.Text = "http://localhost/example.php";
             // 
             // label8
             // 

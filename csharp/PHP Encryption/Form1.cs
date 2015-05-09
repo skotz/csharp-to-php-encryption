@@ -2,12 +2,12 @@
 // Copyright (c) 2011 Scott Clayton
 //
 // This file is part of the C# to PHP Encryption Library.
-//   
+//
 // The C# to PHP Encryption Library is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
 // (at your option) any later version.
-//   
+//
 // The C# to PHP Encryption Library is distributed in the hope that it will be useful,
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -17,26 +17,19 @@
 // along with the C# to PHP Encryption Library.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.IO;
 using CS2PHPCryptography;
+using System;
+using System.Windows.Forms;
 
 namespace PHP_Encryption
 {
     public partial class frmMain : Form
     {
-        AsyncHttpControl http;
-        AsyncHttpControl http2;
-        RSAtoPHPCryptography rsa;
+        private AsyncHttpControl http;
+        private AsyncHttpControl http2;
+        private RSAtoPHPCryptography rsa;
 
-        SecurePHPConnection secure;
+        private SecurePHPConnection secure;
 
         public frmMain()
         {
@@ -61,14 +54,18 @@ namespace PHP_Encryption
             txtMessage2.Text = aes.Decrypt("34sFYu82zUy4Yrp22lmYN2rlLU1SmwTySx2QhjFGboc=");
         }
 
-        void http_OnHttpResponse(object sender, OnHttpResponseEventArgs e)
+        private void http_OnHttpResponse(object sender, OnHttpResponseEventArgs e)
         {
             btnSend.Enabled = true;
 
             if (!e.Error)
+            {
                 txtResponse.Text = e.ResponseBody;
+            }
             else
+            {
                 MessageBox.Show(e.ResponseBody);
+            }
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -79,7 +76,9 @@ namespace PHP_Encryption
             postVars.AddVariable("name", txtMessage.Text);
 
             if (!http.IsBusy)
+            {
                 http.Post(txtAddress.Text, postVars);
+            }
         }
 
         private void btnSendTest2_Click(object sender, EventArgs e)
@@ -93,17 +92,23 @@ namespace PHP_Encryption
             txtEncrypted2.Text = code;
 
             if (!http2.IsBusy)
+            {
                 http2.Post(txtAddress2.Text, postVars);
+            }
         }
 
-        void http2_OnHttpResponse(object sender, OnHttpResponseEventArgs e)
+        private void http2_OnHttpResponse(object sender, OnHttpResponseEventArgs e)
         {
             btnSendTest2.Enabled = true;
 
             if (!e.Error)
+            {
                 txtResponse2.Text = e.ResponseBody;
+            }
             else
+            {
                 MessageBox.Show(e.ResponseBody);
+            }
         }
 
         private void btnSendTest3_Click(object sender, EventArgs e)
@@ -124,13 +129,13 @@ namespace PHP_Encryption
             btnEstablishConnection.Enabled = false;
         }
 
-        void secure_OnResponseReceived(object sender, ResponseReceivedEventArgs e)
+        private void secure_OnResponseReceived(object sender, ResponseReceivedEventArgs e)
         {
             btnSendTest3.Enabled = true;
             txtResponse3.Text = e.Response;
         }
 
-        void secure_OnConnectionEstablished(object sender, OnConnectionEstablishedEventArgs e)
+        private void secure_OnConnectionEstablished(object sender, OnConnectionEstablishedEventArgs e)
         {
             btnSendTest3.Enabled = true;
             txtResponse3.Text = "Sucessfully connected!";
